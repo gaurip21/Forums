@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://DefaultNamespace" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://DefaultNamespace" xmlns:intf="http://DefaultNamespace" xmlns:tns1="http://awt.java" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://DefaultNamespace" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://awt.java"/>
+   <element name="run">
+    <complexType/>
+   </element>
+   <element name="runResponse">
+    <complexType/>
+   </element>
+   <element name="start">
+    <complexType/>
+   </element>
+   <element name="startResponse">
+    <complexType/>
+   </element>
+   <element name="draw">
+    <complexType>
+     <sequence>
+      <element name="g" type="xsd:anyType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="drawResponse">
+    <complexType/>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="startRequest">
+
+      <wsdl:part element="impl:start" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="runRequest">
+
+      <wsdl:part element="impl:run" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="drawResponse">
+
+      <wsdl:part element="impl:drawResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="drawRequest">
+
+      <wsdl:part element="impl:draw" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="runResponse">
+
+      <wsdl:part element="impl:runResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="startResponse">
+
+      <wsdl:part element="impl:startResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="MyBall">
+
+      <wsdl:operation name="run">
+
+         <wsdl:input message="impl:runRequest" name="runRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:runResponse" name="runResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="start">
+
+         <wsdl:input message="impl:startRequest" name="startRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:startResponse" name="startResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="draw">
+
+         <wsdl:input message="impl:drawRequest" name="drawRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:drawResponse" name="drawResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="MyBallSoapBinding" type="impl:MyBall">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="run">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="runRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="runResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="start">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="startRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="startResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="draw">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="drawRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="drawResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="MyBallService">
+
+      <wsdl:port binding="impl:MyBallSoapBinding" name="MyBall">
+
+         <wsdlsoap:address location="http://localhost:8080/CS3220HW1/services/MyBall"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
